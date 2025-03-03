@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "AI Code Detector",
+    "version": "1.0",
+    "description": "AI-generated code in HackerRank.",
+    "permissions": ["activeTab", "storage", "scripting"],
+    "host_permissions": ["*://www.hackerrank.com/*"],  
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.hackerrank.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
